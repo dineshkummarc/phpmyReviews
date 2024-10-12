@@ -1,1 +1,2 @@
-Trusted-Reviews
+# phpmyreviews
+formerly Trusted-Reviews
