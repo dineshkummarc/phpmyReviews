@@ -17,9 +17,6 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        if( request()->has( 'return' ) ) 
-            session(['return' => request( 'return' )]);
-        
         return view('auth.login');
     }
 

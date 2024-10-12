@@ -17,9 +17,6 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        if( request()->has( 'return' ) ) 
-            session(['return' => request( 'return' )]);
-
         return view('auth.register');
     }
 

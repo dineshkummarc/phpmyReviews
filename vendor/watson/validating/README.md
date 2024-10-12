@@ -21,7 +21,7 @@ Looking to use Validating on Laravel 5.0 to 5.2? [Take a look at the 2.x branch 
 
 The Laravel 5.0 - 5.2 version used a since-deprecated `ValidationException` contract from the Laravel framework. For Laravel 5.3 we now extend the core validation `ValidationException` which means the framework will automatically redirect back with errors when a validation error occurs, much like a `FormRequest` would.
 
-## Laravel 5.3
+## Laravel 5.3+
 Just read on - these instructions are for you!
 
 # Installation
@@ -56,7 +56,7 @@ You can also add the trait to a `BaseModel` if you're using one and it will work
 
 *Note: you will need to set the `$rules` property on any models that extend from a `BaseModel` that uses the trait, or otherwise set an empty array as the `$rules` for the `BaseModel`. If you do not, you will inevitably end up with `LogicException with message 'Relationship method must return an object of type Illuminate\Database\Eloquent\Relations\Relation'`.*
 
-Now, you have access to some plesant functionality.
+Now, you have access to some pleasant functionality.
 
 ```php
 // Check whether the model is valid or not.
@@ -219,7 +219,7 @@ There is currently a bug in Laravel (see issue [#1181](https://github.com/larave
 ## Controller usage
 There are a number of ways you can go about using the validating validating model in your controllers, however here is one example that makes use of the new FormRequest in Laravel 5 (if you'd like to see another controller example without the FormRequest, check the [4.2+ version of this package](https://github.com/dwightwatson/validating/tree/0.10).
 
-This example keeps your code clean by allowing the FormRequest to handle your form validation and the model to handle it's own validation. By enabling validation exceptions you can reduce repetitive controller code (try/catch blocks) and handle model validation exceptions globally (your form requests should keep your models valid, so if your model becomes invalid it's an *exceptional* event).
+This example keeps your code clean by allowing the FormRequest to handle your form validation and the model to handle its own validation. By enabling validation exceptions you can reduce repetitive controller code (try/catch blocks) and handle model validation exceptions globally (your form requests should keep your models valid, so if your model becomes invalid it's an *exceptional* event).
 
 ```php
 <?php namespace App\Http\Controllers;

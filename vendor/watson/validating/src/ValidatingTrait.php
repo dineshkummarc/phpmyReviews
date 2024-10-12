@@ -2,6 +2,7 @@
 
 namespace Watson\Validating;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\MessageBag;
 use Illuminate\Validation\Factory;
 use Illuminate\Support\Facades\Validator;
@@ -495,7 +496,7 @@ trait ValidatingTrait
      */
     protected function getUniqueIdentifierInjectorMethod($validationRule)
     {
-        $method = 'prepare' . studly_case($validationRule) . 'Rule';
+        $method = 'prepare' . Str::studly($validationRule) . 'Rule';
 
         return method_exists($this, $method) ? $method : false;
     }
